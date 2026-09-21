@@ -82,6 +82,8 @@ const MapRenderer = (() => {
         } else if (currentLayer === 'pop_density') {
             const normVal = Math.min(score / 2000, 1) * 100;
             color = ROIEngine.getMetricColor(normVal, currentLayer);
+        } else if (currentLayer === 'youth_unemployment' || currentLayer === 'electrification') {
+            color = ROIEngine.getMetricColor(score, currentLayer);
         } else if (currentLayer === 'clusters') {
             const clusterColors = ['#00f5d4', '#7b61ff', '#f72585', '#fbbf24', '#38bdf8', '#4ade80', '#c084fc', '#f472b6'];
             color = clusterColors[props.ml_cluster % clusterColors.length] || '#555';
@@ -299,6 +301,16 @@ const MapRenderer = (() => {
                 title: 'Population Density',
                 gradient: 'linear-gradient(to right, rgb(30,100,180), rgb(60,200,250))',
                 min: 'Low', max: 'High',
+            },
+            youth_unemployment: {
+                title: 'Youth Unemployment',
+                gradient: 'linear-gradient(to right, rgb(50,200,80), rgb(250,50,40))',
+                min: '0%', max: '100%',
+            },
+            electrification: {
+                title: 'Electrification Rate',
+                gradient: 'linear-gradient(to right, rgb(80,40,120), rgb(180,100,255))',
+                min: '0%', max: '100%',
             },
             clusters: {
                 title: 'AI Management Zones',
