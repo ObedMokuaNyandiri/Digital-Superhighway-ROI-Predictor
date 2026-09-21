@@ -406,17 +406,27 @@ body {
     font-weight: 500;
 }
 
-.topn-buttons, .layer-buttons {
+.topn-buttons {
     display: flex;
     gap: 4px;
 }
 
+.layer-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+}
+
 .topn-btn, .layer-btn {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 6px 4px;
     font-family: inherit;
     font-size: 0.72rem;
     font-weight: 500;
+    line-height: 1.2;
     background: var(--bg-tertiary);
     border: 1px solid var(--glass-border);
     color: var(--text-secondary);
