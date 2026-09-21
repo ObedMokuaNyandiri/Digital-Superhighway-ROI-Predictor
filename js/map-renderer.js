@@ -16,7 +16,7 @@ const MapRenderer = (() => {
     let selectedWardId = null;
 
     function loadPowerGrid() {
-        fetch('data/kenya_power_grid.geojson')
+        fetch('Data/kenya_power_grid.geojson')
             .then(res => res.json())
             .then(data => {
                 gridLayer = L.geoJSON(data, {

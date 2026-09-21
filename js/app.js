@@ -76,7 +76,7 @@ const APP = (() => {
         
         // Load Data
         try {
-            const response = await fetch('data/kenya_wards_roi.geojson');
+            const response = await fetch('Data/kenya_wards_roi.geojson');
             if (!response.ok) throw new Error("Failed to load geojson");
             
             APP_STATE.geojsonData = await response.json();
